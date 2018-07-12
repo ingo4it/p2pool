@@ -8,12 +8,12 @@ from p2pool.util import pack
 
 
 P2P_PREFIX = 'f9beb4d4'.decode('hex')
-P2P_PORT = 1331
+P2P_PORT = 5442
 ADDRESS_VERSION = 36
 SEGWIT_ADDRESS_VERSION = 5
-RPC_PORT = 1441
+RPC_PORT = 5332
 RPC_CHECK = defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
-            (yield helper.check_genesis_block(bitcoind, 'ac5927c594d49cc0bdb81759d0da8297eb614683d3acb62f0703b639023'))
+            (yield helper.check_genesis_block(bitcoind, '1b75fb6cfc7ee94f1552595c1e95ba4b149cbbb1d94bd05f23f2d432dce'))
             ))
 SUBSIDY_FUNC = lambda height: __import__('groestlcoin_subsidy').getBlockBaseValue(0, height+1)
 POW_FUNC = data.hash_groestl
